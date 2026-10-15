@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voices of Democracy | Amplifying Citizens, Shaping the Future</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header>
+        <nav>
+            <div class="logo">VoicesOf<span>Democracy.in</span></div>
+            <ul class="nav-links">
+                <li><a href="#feed">Town Hall</a></li>
+                <li><a href="#polls">Live Polls</a></li>
+                <li><a href="#initiatives">Manifestos</a></li>
+                <li><a href="#about">Our Mission</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Your Voice Is The Cornerstone Of Our Republic</h1>
+            <p>A non-partisan digital town hall for citizens of India to debate policies, champion grassroots community initiatives, and directly bridge the gap with governance.</p>
+            <button class="cta-btn" id="shareVoiceBtn">Raise Your Voice</button>
+        </div>
+    </section>
+
+    <!-- Dynamic Quote Widget -->
+    <div class="quote-section">
+        <p class="quote-text" id="quoteDisplay">"Democracy is not merely a form of government. It is primarily a mode of associated living, of conjoint communicated experience."</p>
+        <p class="quote-author" id="quoteAuthor">— Dr. B.R. Ambedkar</p>
+    </div>
+
+    <!-- Main Content Area -->
+    <main class="main-container">
+        
+        <!-- Live Forum / Discussion Feed -->
+        <section class="feed-section" id="feed">
+            <h2>Trending Citizen Insights</h2>
+            
+            <div class="voice-card">
+                <div class="card-meta">By Aarav Sharma • Mumbai • 2 hours ago</div>
+                <h3>Improving Urban Green Infrastructure</h3>
+                <p>As cities expand, we need legislative mandates for urban rooftop gardens. It's time our local civic bodies offer property tax incentives for apartment complexes implementing sustainable green canopies.</p>
+                <div class="card-tags">
+                    <span class="tag">#UrbanPlanning</span>
+                    <span class="tag">#Environment</span>
+                </div>
+            </div>
+
+            <div class="voice-card">
+                <div class="card-meta">By Priya Patel • Bengaluru • 5 hours ago</div>
+                <h3>The Future of Digital Literacy in Rural Schools</h3>
+                <p>Internet connectivity has reached villages, but digital curriculum hasn't. We need a volunteer network pairing tech professionals with rural public schools for weekly remote mentorship.</p>
+                <div class="card-tags">
+                    <span class="tag">#Education</span>
+                    <span class="tag">#DigitalIndia</span>
+                </div>
+            </div>
+
+            <div class="voice-card">
+                <div class="card-meta">By Dr. K. Srinivasan • Chennai • Yesterday</div>
+                <h3>Decentralizing Primary Healthcare Infrastructure</h3>
+                <p>True public welfare begins when ward-level clinics are empowered with basic diagnostic labs. This reduces the immense daily burden currently placed on tier-1 multi-specialty government hospitals.</p>
+                <div class="card-tags">
+                    <span class="tag">#PublicHealth</span>
+                    <span class="tag">#Policy</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sidebar Widgets -->
+        <aside class="poll-section" id="polls">
+            <h2>Today's Citizen Poll</h2>
+            <div class="poll-box" id="pollBox">
+                <p><strong>Which public sector area should receive the highest budget priority in the upcoming fiscal cycle?</strong></p>
+                
+                <div class="poll-option" data-pct="42">
+                    <span>Public Education & AI Research</span>
+                    <span class="percentage">42%</span>
+                </div>
+                
+                <div class="poll-option" data-pct="28">
+                    <span>Renewable Energy Infrastructure</span>
+                    <span class="percentage">28%</span>
+                </div>
+                
+                <div class="poll-option" data-pct="18">
+                    <span>Rural Healthcare Expansion</span>
+                    <span class="percentage">18%</span>
+                </div>
+                
+                <div class="poll-option" data-pct="12">
+                    <span>Modernizing Public Transit Systems</span>
+                    <span class="percentage">12%</span>
+                </div>
+                
+                <p style="font-size: 0.8rem; color:#718096; margin-top:1rem; text-align:center;" id="pollStatus">Select an option to cast your anonymous vote.</p>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <p>© 2026 Voices of Democracy.in • An independent, non-partisan citizen sandbox building transparent civic dialogue.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
