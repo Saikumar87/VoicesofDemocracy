@@ -1,114 +1,111 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voices of Democracy | Amplifying Citizens, Shaping the Future</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Voices of Democracy — stories, ideas, and perspectives on civic life.">
+  <meta name="theme-color" content="#10243a">
+  <title>Voices of Democracy | Ideas. People. Participation.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- Header & Navigation -->
-    <header>
-        <nav>
-            <div class="logo">VoicesOf<span>Democracy.in</span></div>
-            <ul class="nav-links">
-                <li><a href="#feed">Town Hall</a></li>
-                <li><a href="#polls">Live Polls</a></li>
-                <li><a href="#initiatives">Manifestos</a></li>
-                <li><a href="#about">Our Mission</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Voices of Democracy home">
+        <span class="brand-mark" aria-hidden="true">V</span>
+        <span class="brand-name">VOICES <span>OF</span> DEMOCRACY</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Open navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="primary-nav" id="primaryNav" aria-label="Main navigation">
+        <a class="active" href="index.html">Latest</a>
+        <a href="#stories">Stories</a>
+        <a href="#about">About</a>
+      </nav>
+    </div>
+  </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Your Voice Is The Cornerstone Of Our Republic</h1>
-            <p>A non-partisan digital town hall for citizens of India to debate policies, champion grassroots community initiatives, and directly bridge the gap with governance.</p>
-            <button class="cta-btn" id="shareVoiceBtn">Raise Your Voice</button>
-        </div>
+  <main id="main">
+    <section class="intro">
+      <p class="eyebrow"><span class="eyebrow-line"></span> A publication about civic life</p>
+      <h1>Democracy is a conversation.<br><em>Everyone has a voice.</em></h1>
+      <p class="intro-copy">Exploring the people, ideas, institutions, and choices that shape our shared civic future.</p>
     </section>
 
-    <!-- Dynamic Quote Widget -->
-    <div class="quote-section">
-        <p class="quote-text" id="quoteDisplay">"Democracy is not merely a form of government. It is primarily a mode of associated living, of conjoint communicated experience."</p>
-        <p class="quote-author" id="quoteAuthor">— Dr. B.R. Ambedkar</p>
-    </div>
+    <section class="featured-wrap" id="featuredSection" aria-label="Featured story">
+      <div class="section-kicker"><span>IN FOCUS</span><span class="kicker-rule"></span></div>
+      <article class="featured-card" id="featuredStory">
+        <div class="featured-image-wrap">
+          <img class="featured-image" src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=1400&q=85" alt="United States Capitol building" />
+          <span class="image-caption">Civic life and public institutions</span>
+        </div>
+        <div class="featured-content">
+          <p class="story-category">CIVIC LIFE</p>
+          <h2>Understanding the choices that shape our democracy</h2>
+          <p class="featured-excerpt">Thoughtful reporting and perspectives can help us better understand the institutions, debates, and decisions that affect our communities.</p>
+          <div class="story-meta"><span>Featured perspective</span><span class="meta-dot"></span><span>Voices of Democracy</span></div>
+          <a class="text-link" href="#stories">Explore the stories <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+    </section>
 
-    <!-- Main Content Area -->
-    <main class="main-container">
-        
-        <!-- Live Forum / Discussion Feed -->
-        <section class="feed-section" id="feed">
-            <h2>Trending Citizen Insights</h2>
-            
-            <div class="voice-card">
-                <div class="card-meta">By Aarav Sharma • Mumbai • 2 hours ago</div>
-                <h3>Improving Urban Green Infrastructure</h3>
-                <p>As cities expand, we need legislative mandates for urban rooftop gardens. It's time our local civic bodies offer property tax incentives for apartment complexes implementing sustainable green canopies.</p>
-                <div class="card-tags">
-                    <span class="tag">#UrbanPlanning</span>
-                    <span class="tag">#Environment</span>
-                </div>
-            </div>
+    <section class="stories-section" id="stories">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">THE LATEST</p>
+          <h2>Ideas worth <em>sharing.</em></h2>
+        </div>
+        <p class="section-description">Perspectives and explainers on democracy, participation, leadership, and community.</p>
+      </div>
 
-            <div class="voice-card">
-                <div class="card-meta">By Priya Patel • Bengaluru • 5 hours ago</div>
-                <h3>The Future of Digital Literacy in Rural Schools</h3>
-                <p>Internet connectivity has reached villages, but digital curriculum hasn't. We need a volunteer network pairing tech professionals with rural public schools for weekly remote mentorship.</p>
-                <div class="card-tags">
-                    <span class="tag">#Education</span>
-                    <span class="tag">#DigitalIndia</span>
-                </div>
-            </div>
+      <div class="toolbar">
+        <div class="filters" id="categoryFilters" aria-label="Filter stories by category">
+          <button class="filter-button active" data-category="All" type="button">All stories</button>
+          <button class="filter-button" data-category="Civic Life" type="button">Civic life</button>
+          <button class="filter-button" data-category="Elections" type="button">Elections</button>
+          <button class="filter-button" data-category="Institutions" type="button">Institutions</button>
+          <button class="filter-button" data-category="Community" type="button">Community</button>
+        </div>
+        <label class="search-box">
+          <span class="sr-only">Search stories</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 5 5"></path></svg>
+          <input id="storySearch" type="search" placeholder="Search stories">
+        </label>
+      </div>
 
-            <div class="voice-card">
-                <div class="card-meta">By Dr. K. Srinivasan • Chennai • Yesterday</div>
-                <h3>Decentralizing Primary Healthcare Infrastructure</h3>
-                <p>True public welfare begins when ward-level clinics are empowered with basic diagnostic labs. This reduces the immense daily burden currently placed on tier-1 multi-specialty government hospitals.</p>
-                <div class="card-tags">
-                    <span class="tag">#PublicHealth</span>
-                    <span class="tag">#Policy</span>
-                </div>
-            </div>
-        </section>
+      <div class="results-line" id="resultsLine" aria-live="polite"></div>
+      <div class="story-grid" id="storyGrid"></div>
+      <div class="empty-state" id="emptyState" hidden>
+        <h3>No stories found</h3>
+        <p>Try another search term or choose a different category.</p>
+        <button class="outline-button" id="clearFilters" type="button">Clear filters</button>
+      </div>
+    </section>
 
-        <!-- Sidebar Widgets -->
-        <aside class="poll-section" id="polls">
-            <h2>Today's Citizen Poll</h2>
-            <div class="poll-box" id="pollBox">
-                <p><strong>Which public sector area should receive the highest budget priority in the upcoming fiscal cycle?</strong></p>
-                
-                <div class="poll-option" data-pct="42">
-                    <span>Public Education & AI Research</span>
-                    <span class="percentage">42%</span>
-                </div>
-                
-                <div class="poll-option" data-pct="28">
-                    <span>Renewable Energy Infrastructure</span>
-                    <span class="percentage">28%</span>
-                </div>
-                
-                <div class="poll-option" data-pct="18">
-                    <span>Rural Healthcare Expansion</span>
-                    <span class="percentage">18%</span>
-                </div>
-                
-                <div class="poll-option" data-pct="12">
-                    <span>Modernizing Public Transit Systems</span>
-                    <span class="percentage">12%</span>
-                </div>
-                
-                <p style="font-size: 0.8rem; color:#718096; margin-top:1rem; text-align:center;" id="pollStatus">Select an option to cast your anonymous vote.</p>
-            </div>
-        </aside>
-    </main>
+    <section class="about-band" id="about">
+      <div class="about-symbol" aria-hidden="true">“</div>
+      <div>
+        <p class="eyebrow">ABOUT THIS PUBLICATION</p>
+        <h2>A stronger public square starts with <em>listening.</em></h2>
+        <p>Voices of Democracy brings together accessible explainers, informed perspectives, and stories about how democracy works in everyday life. Our aim is to encourage curiosity, thoughtful discussion, and participation.</p>
+      </div>
+    </section>
+  </main>
 
-    <footer>
-        <p>© 2026 Voices of Democracy.in • An independent, non-partisan citizen sandbox building transparent civic dialogue.</p>
-    </footer>
-
-    <script src="script.js"></script>
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">V</span>
+      <span class="brand-name">VOICES <span>OF</span> DEMOCRACY</span>
+    </a>
+    <p>Ideas. People. Participation.</p>
+    <small>© <span id="currentYear"></span> Voices of Democracy. All rights reserved.</small>
+  </footer>
 </body>
 </html>
