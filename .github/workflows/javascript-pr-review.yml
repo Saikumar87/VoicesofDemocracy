@@ -1,0 +1,56 @@
+name: JavaScript PR review
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    paths:
+      - '**/*.js'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: javascript-pr-review-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  review:
+    if: github.event.pull_request.draft == false && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the trusted base revision
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          fetch-depth: 0
+
+      - name: Fetch and verify the pull request revision
+        env:
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          PR_BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          PR_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          git fetch --no-tags origin "refs/pull/${PR_NUMBER}/head"
+          fetched_sha="$(git rev-parse FETCH_HEAD)"
+          if [ "$fetched_sha" != "$PR_HEAD_SHA" ]; then
+            echo "::error::The pull request changed while the review was starting. A new review will run for the latest commit."
+            exit 1
+          fi
+          git diff "${PR_BASE_SHA}...${PR_HEAD_SHA}" -- '*.js' > pr.diff
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 22
+
+      - name: Install GitHub Copilot CLI
+        run: npm install --global @github/copilot
+
+      - name: Review JavaScript changes with the custom agent
+        env:
+          COPILOT_GITHUB_TOKEN: ${{ secrets.COPILOT_GITHUB_TOKEN }}
+        run: |
+          copilot --agent=javascript-pr-reviewer \
+            -p "Review the JavaScript pull request changes in @pr.diff. Follow the repository's JavaScript PR Reviewer instructions. Report actionable findings only. Do not edit files or run code." \
+            -s --no-ask-user > review.md
+          cat review.md >> "$GITHUB_STEP_SUMMARY"
